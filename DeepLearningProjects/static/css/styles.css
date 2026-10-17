@@ -1,0 +1,378 @@
+:root {
+  --bg: #07110e;
+  --panel: rgba(16, 32, 27, 0.78);
+  --line: rgba(196, 230, 210, 0.14);
+  --text: #e8f4ec;
+  --muted: #9bb5a6;
+  --accent: #8fe3b0;
+  --accent-2: #d4f56b;
+  --setosa: #7ec8e3;
+  --versicolor: #9b8cff;
+  --virginica: #f07aa6;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  --radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Outfit", system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #143328 0%, transparent 55%),
+    radial-gradient(900px 500px at 110% 10%, #1a2a40 0%, transparent 50%),
+    var(--bg);
+  padding: 32px 20px 48px;
+}
+
+.bg-orbs span {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-orbs span:nth-child(1) {
+  width: 280px;
+  height: 280px;
+  background: #1f6a4a;
+  top: 12%;
+  left: -80px;
+}
+
+.bg-orbs span:nth-child(2) {
+  width: 220px;
+  height: 220px;
+  background: #4b3d8a;
+  right: 8%;
+  top: 18%;
+}
+
+.bg-orbs span:nth-child(3) {
+  width: 260px;
+  height: 260px;
+  background: #6a2d48;
+  bottom: -40px;
+  right: 20%;
+}
+
+.topbar {
+  max-width: 1120px;
+  margin: 0 auto 28px;
+  display: grid;
+  gap: 14px;
+}
+
+.brand {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(160deg, var(--accent), #2d8a5c);
+  color: #062016;
+  font-weight: 650;
+  font-family: "Fraunces", serif;
+  box-shadow: 0 10px 24px rgba(143, 227, 176, 0.25);
+}
+
+.eyebrow {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", serif;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.lede, .panel-head p, footer {
+  color: var(--muted);
+}
+
+.lede {
+  max-width: 52ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 20px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.panel-head {
+  margin-bottom: 20px;
+}
+
+.panel-head h2 {
+  font-size: 1.45rem;
+  margin-bottom: 6px;
+}
+
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.2s ease;
+}
+
+.chip:hover,
+.chip.active {
+  background: rgba(143, 227, 176, 0.16);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.field-top output {
+  color: var(--accent-2);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+input[type="range"] {
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #1f3a30, #8fe3b0);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f4ffe8;
+  box-shadow: 0 0 0 4px rgba(143, 227, 176, 0.25);
+  cursor: pointer;
+}
+
+.predict-btn {
+  margin-top: 6px;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  border-radius: 18px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #062016;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  font: inherit;
+  font-weight: 600;
+  box-shadow: 0 14px 30px rgba(212, 245, 107, 0.18);
+}
+
+.predict-btn small {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.predict-btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.winner {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  margin-bottom: 22px;
+}
+
+.winner[hidden] {
+  display: none;
+}
+
+.winner-visual {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+}
+
+.winner-visual.setosa { background: radial-gradient(circle at 30% 30%, #d7f3fb, var(--setosa)); }
+.winner-visual.versicolor { background: radial-gradient(circle at 30% 30%, #c9c0ff, var(--versicolor)); }
+.winner-visual.virginica { background: radial-gradient(circle at 30% 30%, #f7b4cc, var(--virginica)); }
+
+.winner-kicker {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.winner h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.winner-score {
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.prob-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.species-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.species-row span:nth-child(2) {
+  flex: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.setosa { background: var(--setosa); }
+.dot.versicolor { background: var(--versicolor); }
+.dot.virginica { background: var(--virginica); }
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 0.45s ease;
+}
+
+.bar span[data-bar="Iris setosa"] { background: var(--setosa); }
+.bar span[data-bar="Iris versicolor"] { background: var(--versicolor); }
+.bar span[data-bar="Iris virginica"] { background: var(--virginica); }
+
+.species-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.species-card {
+  text-align: center;
+  padding: 10px 8px 12px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.25s ease;
+}
+
+.species-card svg {
+  width: 64px;
+  height: 64px;
+}
+
+.species-card figcaption {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.species-card small {
+  color: var(--muted);
+}
+
+.species-card.active {
+  border-color: var(--accent);
+  background: rgba(143, 227, 176, 0.08);
+  transform: translateY(-3px);
+}
+
+footer {
+  max-width: 1120px;
+  margin: 22px auto 0;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .layout,
+  .species-cards {
+    grid-template-columns: 1fr;
+  }
+}
