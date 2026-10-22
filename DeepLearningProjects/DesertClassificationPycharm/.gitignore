@@ -1,0 +1,16 @@
+# Sanal ortam ve IDE
+.venv/
+venv/
+.idea/
+__pycache__/
+*.pyc
+
+# Büyük veri seti (GitHub'a yüklenmesin)
+data/
+
+# Eğitilmiş model dosyaları (GitHub kotasını doldurmasın)
+models/*.pth
+models/*.pt
+
+# Mac kalıntıları
+.DS_Store
