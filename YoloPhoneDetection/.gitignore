@@ -1,0 +1,5 @@
+echo ".venv/" >> .gitignore
+echo "*.pt" >> .gitignore
+echo ".idea/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo ".DS_Store" >> .gitignore
