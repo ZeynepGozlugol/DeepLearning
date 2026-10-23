@@ -1,6 +1,0 @@
-fastapi
-uvicorn[standard]
-torch
-scikit-learn
-pydantic
-numpy
